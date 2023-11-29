@@ -1,7 +1,16 @@
+from random import randint
+
+def ramdomMastermin(color : list , difficulte : int) -> list : 
+    listcolor = []
+    while not difficulte == 0 :
+        colorrandom = color[randint(1,len(color))-1] 
+        listcolor += colorrandom
+        difficulte -= 1
+
 if __name__ == '__main__' :
     fini = False
     menu = """
-        Tapez '1' pour ...
+        Tapez '1' pour commencer le jeu! 
         Tapez '2' pour ...
         Taoez 'q' pour quitter.
         Votre choix : 
@@ -9,7 +18,10 @@ if __name__ == '__main__' :
     while (choix := input(menu)) not in 'qQ' :
         match choix : 
             case '1':
-                print("Choix 1")
+                color = ["rouge", "vert", "bleu"]
+                difficulte = int(input("entrer le nb de coulueu que vous voulez trouver : "))
+
+                print(ramdomMastermin(color, difficulte))
             case '2':
                 print("Choix ")
             case _: 
