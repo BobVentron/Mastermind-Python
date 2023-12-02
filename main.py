@@ -9,8 +9,16 @@ def ramdomMastermind(color : list , difficulte : int) -> list :
         difficulte -= 1
     return listcolor
 
+def couleurCorect(couleurATrouver : list, listCouleur : list) -> int :
+    nbCouleurBonne = 0
+    for e in listCouleur :
+        if e in couleurATrouver : 
+            nbCouleurBonne += 1
+    return nbCouleurBonne
+
+
 def gestionMastermind():
-    color = ["rouge", "vert", "bleu"]
+    color = ["rouge", "vert", "bleu", "jaune"]
     difficulte = int(input("entrer le nb de coulueu que vous voulez trouver : "))
     if difficulte > len(color) :
         print("Erreur: la difficulter est trop élever pour le nombre de couleur choisi")
@@ -34,6 +42,7 @@ def gestionMastermind():
                 break
             else :
                 print("pas trouver")
+                print(couleurCorect(CouleurATrouver, listcouleur))
 
 if __name__ == '__main__' :
     fini = False
