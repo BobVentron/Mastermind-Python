@@ -1,11 +1,12 @@
 from random import randint
 
-def ramdomMastermin(color : list , difficulte : int) -> list : 
+def ramdomMastermind(color : list , difficulte : int) -> list : 
     listcolor = []
     while not difficulte == 0 :
         colorrandom = color[randint(1,len(color))-1] 
-        listcolor += colorrandom
+        listcolor.append(colorrandom)
         difficulte -= 1
+    return listcolor
 
 if __name__ == '__main__' :
     fini = False
@@ -21,7 +22,7 @@ if __name__ == '__main__' :
                 color = ["rouge", "vert", "bleu"]
                 difficulte = int(input("entrer le nb de coulueu que vous voulez trouver : "))
 
-                print(ramdomMastermin(color, difficulte))
+                print(ramdomMastermind(color, difficulte))
             case '2':
                 print("Choix ")
             case _: 
