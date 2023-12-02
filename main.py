@@ -19,7 +19,7 @@ def couleurCorect(couleurATrouver : list, listCouleur : list) -> int :
 
 def gestionMastermind():
     color = ["rouge", "vert", "bleu", "jaune"]
-    difficulte = int(input("entrer le nb de coulueu que vous voulez trouver : "))
+    difficulte = int(input("entrer le nombre de couleur que vous voulez trouver : "))
     if difficulte > len(color) :
         print("Erreur: la difficulter est trop élever pour le nombre de couleur choisi")
     else : 
@@ -28,7 +28,7 @@ def gestionMastermind():
         print(CouleurATrouver)
 
         menu = """
-            Entrer des couleur (séparer par un espace) que vous penser être la solution,
+            Entrer des couleusr (séparer par un espace) que vous penser être la solution,
             ou tapez sur "q" pour arrêter le jeu et avoir la solution.
         """
         while (choix := input(menu)) not in 'qQ' :
@@ -43,6 +43,10 @@ def gestionMastermind():
             else :
                 print("pas trouver")
                 print(couleurCorect(CouleurATrouver, listcouleur))
+
+        print("La solution était : ")
+        for e in CouleurATrouver : 
+            print(e + " ", end='')
 
 if __name__ == '__main__' :
     fini = False
