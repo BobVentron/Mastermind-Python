@@ -22,7 +22,10 @@ if __name__ == '__main__' :
             case '1':
                 color = ["rouge", "vert", "bleu"]
                 difficulte = int(input("entrer le nb de coulueu que vous voulez trouver : "))
-                print(ramdomMastermind(color, difficulte))
+                if difficulte > len(color) :
+                    print("Erreur: la difficulter est trop élever pour le nombre de couleur choisi")
+                else : 
+                    print(ramdomMastermind(color, difficulte))
             case '2':
                 print("Choix ")
             case _: 
