@@ -15,7 +15,25 @@ def gestionMastermind():
     if difficulte > len(color) :
         print("Erreur: la difficulter est trop élever pour le nombre de couleur choisi")
     else : 
-        print(ramdomMastermind(color, difficulte))
+        CouleurATrouver = ramdomMastermind(color, difficulte)
+        print("Votre but est de retrouver la combinaisont de couleur générer :")
+        print(CouleurATrouver)
+
+        menu = """
+            Entrer des couleur (séparer par un espace) que vous penser être la solution,
+            ou tapez sur "q" pour arrêter le jeu et avoir la solution.
+        """
+        while (choix := input(menu)) not in 'qQ' :
+            listcouleur = choix.split()
+            for e in listcouleur : 
+                if e not in color: 
+                    print("Vous avez saisi des couleurs érronner.")
+            
+            if listcouleur == CouleurATrouver : 
+                print("Bravo vous avez trouver!!")
+                break
+            else :
+                print("pas trouver")
 
 if __name__ == '__main__' :
     fini = False
