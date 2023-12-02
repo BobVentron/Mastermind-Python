@@ -4,8 +4,7 @@ def ramdomMastermind(color : list , difficulte : int) -> list :
     listcolor = []
     while not difficulte == 0 :
         colorrandom = color[randint(1,len(color))-1] 
-        print(colorrandom)
-        listcolor.append(colorrandom.join())
+        listcolor.append(colorrandom)
         difficulte -= 1
     return listcolor
 
