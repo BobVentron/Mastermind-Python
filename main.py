@@ -9,6 +9,14 @@ def ramdomMastermind(color : list , difficulte : int) -> list :
         difficulte -= 1
     return listcolor
 
+def gestionMastermind():
+    color = ["rouge", "vert", "bleu"]
+    difficulte = int(input("entrer le nb de coulueu que vous voulez trouver : "))
+    if difficulte > len(color) :
+        print("Erreur: la difficulter est trop élever pour le nombre de couleur choisi")
+    else : 
+        print(ramdomMastermind(color, difficulte))
+
 if __name__ == '__main__' :
     fini = False
     menu = """
@@ -20,12 +28,7 @@ if __name__ == '__main__' :
     while (choix := input(menu)) not in 'qQ' :
         match choix : 
             case '1':
-                color = ["rouge", "vert", "bleu"]
-                difficulte = int(input("entrer le nb de coulueu que vous voulez trouver : "))
-                if difficulte > len(color) :
-                    print("Erreur: la difficulter est trop élever pour le nombre de couleur choisi")
-                else : 
-                    print(ramdomMastermind(color, difficulte))
+                gestionMastermind()
             case '2':
                 print("Choix ")
             case _: 
