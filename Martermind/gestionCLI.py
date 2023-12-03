@@ -25,7 +25,11 @@ def gestionMastermindCLI():
                 if e not in color: 
                     print("Vous avez saisi des couleurs érronner.")
                     couleurBonne = False
-            
+
+            if not len(listcouleur) == len(CouleurATrouver):
+                print(f"Il faut saisir {len(CouleurATrouver)} couleur!")
+                couleurBonne = False
+                
             if couleurBonne == True :
                 if listcouleur == CouleurATrouver : 
                     print("Bravo vous avez trouver!!")
