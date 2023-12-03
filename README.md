@@ -1,1 +1,1 @@
-# Mastermind-Python
+# Mini-Jeu-Python
