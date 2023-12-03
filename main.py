@@ -16,6 +16,15 @@ def couleurCorect(couleurATrouver : list, listCouleur : list) -> int :
             nbCouleurBonne += 1
     return nbCouleurBonne
 
+def couleurBienPlacer (couleurATrouver : list, listcouleur : list) -> int :
+    i = 0
+    compt = 0
+    while not i == len(couleurATrouver):
+        if couleurATrouver[i] == listcouleur[i]:
+            compt += 1
+        i += 1
+    return compt
+
 
 def gestionMastermind():
     color = ["rouge", "vert", "bleu", "jaune"]
@@ -43,6 +52,7 @@ def gestionMastermind():
             else :
                 print("pas trouver")
                 print(couleurCorect(CouleurATrouver, listcouleur))
+                print(couleurBienPlacer(CouleurATrouver, listcouleur))
 
         print("La solution était : ")
         for e in CouleurATrouver : 
