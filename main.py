@@ -26,7 +26,7 @@ def couleurBienPlacer (couleurATrouver : list, listcouleur : list) -> int :
     return compt
 
 
-def gestionMastermind():
+def gestionMastermindCLI():
     color = ["rouge", "vert", "bleu", "jaune"]
     difficulte = int(input("entrer le nombre de couleur que vous voulez trouver : "))
     if difficulte > len(color) :
@@ -58,23 +58,34 @@ def gestionMastermind():
                     affichage = f'Vous n\'avez pas trouver la bonne combinaison. Voici quelque indice pour vous aider a la trouver: \n Il y a {bienplacer} pion bien placé \n Il y a {existe} pion qui existe dans la combinaison mais pas à la bonne place'
                     print(affichage)
 
-
         print("La solution était : ", end='')
         for e in CouleurATrouver : 
             print(e + " ", end='')
 
 if __name__ == '__main__' :
     fini = False
-    menu = """
-        Tapez '1' pour commencer le jeu!
+    menu1 = """
+        Tapez '1' pour commencer le jeu du Mastermind!
         Tapez '2' pour ...
         Taoez 'q' pour quitter.
         Votre choix : 
     """
-    while (choix := input(menu)) not in 'qQ' :
+    menu2 = """
+        Tapez '1' pour jouer au jeu en mode CLI.
+        Tapez '2' pour jouer au jeu avec une interface graphique.
+        Tapez 'q' pour quitter.
+    """
+    while (choix := input(menu1)) not in 'qQ' :
         match choix : 
             case '1':
-                gestionMastermind()
+                while (choix2 := input(menu2)) not in 'qQ' :
+                    match choix2 : 
+                        case '1':
+                            gestionMastermindCLI()
+                        case '2' :
+                            print("La version avec interface graphique n'a pas encore été développer!")
+                        case _ :
+                            print("Choix non valide")
             case '2':
                 print("Choix ")
             case _: 
