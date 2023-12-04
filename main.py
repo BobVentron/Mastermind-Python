@@ -7,7 +7,7 @@ if __name__ == '__main__' :
     fini = False
     menu1 = """
         Tapez '1' pour commencer le jeu du Mastermind!
-        Tapez '2' pour ...
+        Tapez '2' pour commencer le jeu du plus ou moins!
         Taoez 'q' pour quitter.s
         Votre choix : 
     """
